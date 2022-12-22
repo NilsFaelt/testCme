@@ -1,16 +1,14 @@
-
-
 // Skriv en funktion som tar den givna arrayen
 // och julifierar den genom att lägga till "Jul"
 // framför allt.
 // Använd dig av .map()
 
-function christmasify() {
-  // Skriv din kod här
-
+function christmasify(array) {
+  const newArray = array.map((item) => `Jul${item}`);
+  return newArray;
 }
 
-const result = christmasify(["Sill", "Julmust", "Korv", "Janssons", "Svill"])
-console.log(result) // ["JulSill", "JulJulmust", "JulKorv", "JulJanssons", "JulSvill"]
+const result = christmasify(["Sill", "Julmust", "Korv", "Janssons", "Svill"]);
+console.log(result); // ["JulSill", "JulJulmust", "JulKorv", "JulJanssons", "JulSvill"]
 
 module.exports = christmasify;

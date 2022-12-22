@@ -3,8 +3,7 @@
 
 function count(arg) {
   const splittedString = arg.split("");
-  console.log(splittedString);
-  return splittedString.length();
+  return splittedString.length;
 }
 
 // Ändra inte dessa
