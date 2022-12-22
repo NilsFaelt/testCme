@@ -10,13 +10,11 @@ import React, { useEffect, useState } from "react";
 const Four = () => {
   const [user, setUser] = useState(null);
 
-  const getData = async (url, fetch) => {
+  const getData = async (url) => {
     const response = await fetch(url);
     const data = await response.json();
     return data;
   };
-
-  console.log(user, "user");
 
   async function getUser() {
     const user = await getData("https://dummyjson.com/users/1");
