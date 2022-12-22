@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 
 // Slutför följande komponent.
 // Tanken är att den ska skriva ut för och efternamn som t.ex.
@@ -9,20 +9,35 @@ import React, { useState } from 'react'
 
 function Six() {
   // Ändra inte statet nedan
-  const [input, setInput] = useState({})
+  const [input, setInput] = useState({
+    firstName: "",
+    lastName: "",
+  });
 
   function handleInput(e) {
     // Rör inte funktionen nedan
-    setInput(input => ({ ...input, [inputName]: value}))
+    setInput((input) => ({ ...input, [e.target.name]: e.target.value }));
   }
-
+  console.log(input);
   return (
     <div>
-      <p data-testid="six-text">Hi, my name is: {input} {input}</p>
-      <input type="text" name="firstName" data-testid="six-firstName" />
-      <input type="text" name="lastName" data-testid="six-lastName" />
+      <p data-testid='six-text'>
+        Hi, my name is: {input.firstName} {input.lastName}
+      </p>
+      <input
+        onChange={(e) => handleInput(e)}
+        type='text'
+        name='firstName'
+        data-testid='six-firstName'
+      />
+      <input
+        onChange={(e) => handleInput(e)}
+        type='text'
+        name='lastName'
+        data-testid='six-lastName'
+      />
     </div>
-  )
+  );
 }
 
-export default Six
+export default Six;
